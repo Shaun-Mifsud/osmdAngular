@@ -28,6 +28,11 @@ const routes: Routes = [
   },
 
   {
+    path: 'score-output',
+    component: ScoreOutputComponent
+  },
+
+  {
     path: 'score-output/:id',
     component: ScoreOutputComponent
   },
