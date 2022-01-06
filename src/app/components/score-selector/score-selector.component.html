@@ -2,14 +2,14 @@
 
 <div class="list-group">
     <ul>
-        <li (click)="onSelect(i)" *ngFor="let score of scores ; let i = index;" >
-            <a class="list-group-item list-group-item-action"> {{score.id}} - {{score.name}} - {{score.composer}} - {{score.instru}}</a>
+        <li *ngFor="let score of scores ; let i = index;" >
+            <a [routerLink]="['/score-selector', score.id]" routerLinkActive="selected" class="list-group-item list-group-item-action"> {{score.id}} - {{score.name}} - {{score.composer}} - {{score.instru}}</a>
         </li>
     </ul>
 </div>
 
 <h5>end of list</h5>
 
-<app-score-output></app-score-output>
+<!-- <router-outlet></router-outlet> -->
 
 <div id="osmdCanvas"></div>

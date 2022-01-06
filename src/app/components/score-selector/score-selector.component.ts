@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from  '@angular/router';
+import { NavigationEnd, Router } from  '@angular/router';
 
 declare var opensheetmusicdisplay: any;
 declare var window: any;
@@ -20,8 +20,14 @@ export class ScoreSelectorComponent implements OnInit {
   constructor(private router:Router){}
 
   ngOnInit(): void {
-
-}
+    this.router.events.subscribe(nav => {
+      if (nav instanceof NavigationEnd)
+      {
+        console.log("Link changed.");
+        
+      }
+    })
+  }
 
   onSelect(score:any){
     score+=1;

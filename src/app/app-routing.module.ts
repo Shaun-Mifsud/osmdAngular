@@ -19,22 +19,22 @@ const routes: Routes = [
 
   {
     path: 'score-selector',
-    component: ScoreSelectorComponent
+    // component: ScoreSelectorComponent,
+    children: [
+      {
+        path: '',
+        component: ScoreSelectorComponent
+      },
+      {
+        path: ':id',
+        component: ScoreOutputComponent
+      }
+    ]
   },
 
   {
     path: 'score-import',
     component: ScoreImportComponent
-  },
-
-  {
-    path: 'score-output',
-    component: ScoreOutputComponent
-  },
-
-  {
-    path: 'score-output/:id',
-    component: ScoreOutputComponent
   },
 
   { // ALWAYS  AT THE BOTTOM
