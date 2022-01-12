@@ -1,3 +1,80 @@
-<p>score-output works!</p>
+<!--header-->
+<div id="header" class="container-fluid">
+    <div class="row text-center">
+        <div class="col-4">
+            <button routerLink="/score-selector" type="button" class="btn btn-primary">
+                <span class="iconify" data-icon="mdi:arrow-left" style="color: white;"></span>
+            </button>
+        </div>
 
+        <div class="col-4">
+            <h5>partName & scoreName</h5>
+        </div>
 
+        <div class="col-4"> <h5>composerName</h5>
+        </div>
+    </div>
+</div>
+
+<!--Score Details & Video-->
+<div class="container-fluid">
+    <div class="row">
+        <!--details-->
+        <div id="scoreDetails" class="col-3">
+            <div class="row">
+                <!--Score Info-->
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <!--Score info-->
+                        <h6>Title</h6>
+                        <h5>Score Name</h5>
+                        <div>
+                            <span class="iconify" data-icon="mdi:account-music" style="color: #0b1a33;"></span>
+                            <h6>Composer</h6>
+                        </div>
+                        <p>composerName</p>
+
+                        <div>
+                            <span class="iconify" data-icon="mdi:account-music" style="color: #0b1a33;"></span>
+                            <h6>Conductor</h6>
+                        </div>
+                        <p>CondcutorName</p>
+
+                        <hr />
+                        
+                        <!--Part info-->
+                        <h6>Part</h6>
+                        <h5>Score Name</h5>
+                        <div>
+                            <span class="iconify" data-icon="mdi:account-music" style="color: #0b1a33;"></span>
+                            <h6>Composer</h6>
+                        </div>
+                        <p>composerName</p>
+
+                        <div>
+                            <span class="iconify" data-icon="mdi:account-music" style="color: #0b1a33;"></span>
+                            <h6>Conductor</h6>
+                        </div>
+                        <p>CondcutorName</p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!--YT Vid-->
+        <div id="ytVidTest" class="col-9">
+            <div  id="ytVid">YT VID</div>          
+        </div>
+    </div>
+</div>
+
+<!--Score display-->
+<div class="comtainer-fluid">
+    <div class="row">
+        <div id="scoreDisplay" class="col-12">
+            <div id="osmdCanvas"></div>
+        </div>
+    </div>
+</div>

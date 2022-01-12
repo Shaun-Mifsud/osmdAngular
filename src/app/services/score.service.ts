@@ -1,24 +1,33 @@
-import { Injectable } from '@angular/core';
+import { ComponentFactoryResolver, Injectable } from '@angular/core';
+import { Score } from 'src/app/struct/score';
+import { SCORE } from '../struct/scores.data';
+import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ScoreService {
 
-  private scores = [
-    {"id":1, "name": "Moonlight", "composer":"L.V Beethoven", "instru":"Piano","path": "src/assets/musicXML/Sonate_No._14_Moonlight_1st_Movement.mxl"},
-    {"id":2, "name": "K545", "composer":"W.A Mozart","instru":"Piano","path":"src/assets/musicXML/Sonata_No.16_In_C_Major_K545-Wolfgang_Amadeus_Mozart.mxl"},
-  ]
+  public score: Score[] = [];  
 
-  constructor() { }
+  constructor(
+    private storageService: StorageService
+  ) { }
 
-  getScoreByIndex(value: number)
+  async init()
   {
-    return this.scores[value];
+    this.score = await this.storageService.get('score') || SCORE;
   }
 
-  getScoreByID(value: number)
+  getScoreByIndex(indexValue: number)
   {
-    return this.scores.find(s => s.id == value);
+    return this.score[indexValue];
   }
+
+  getScoreByID(IDvalue: number)
+  {
+    return this.score[IDvalue];
+    //return this.score.find(s => s.id == IDvalue);
+  }
+
 }

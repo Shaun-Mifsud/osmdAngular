@@ -19,7 +19,6 @@ const routes: Routes = [
 
   {
     path: 'score-selector',
-    // component: ScoreSelectorComponent,
     children: [
       {
         path: '',
