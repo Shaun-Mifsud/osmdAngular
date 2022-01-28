@@ -2,7 +2,7 @@
 
 <div class="list-group">
     <ul>
-        <li *ngFor="let score of scores ; let i = index;" >
+        <li *ngFor="let score of scoreService.score; let i = index;" >
             <a [routerLink]="['/score-selector', score.id]" routerLinkActive="selected" class="list-group-item list-group-item-action"> {{score.id}} - {{score.name}} - {{score.composer}} - {{score.instru}}</a>
         </li>
     </ul>

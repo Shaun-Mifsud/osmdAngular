@@ -1,8 +1,12 @@
 #ytVid{
-    height: 500px;
     background-color: lightcoral;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 #ytVidTest{
     background-color: yellow;
+    padding-bottom: calc((9 / 16) * 100%);
+    position: relative;
 }

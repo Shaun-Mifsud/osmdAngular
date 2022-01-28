@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from  '@angular/router';
+import { ScoreService } from 'src/app/services/score.service';
+import { Score } from 'src/app/struct/score';
 
 declare var opensheetmusicdisplay: any;
 declare var window: any;
@@ -12,12 +14,9 @@ declare var document: any;
 })
 export class ScoreSelectorComponent implements OnInit {
 
-  scores = [
-    {"id":1, "name": "Moonlight", "composer":"L.V Beethoven", "instru":"Piano","path": "src/assets/musicXML/Sonate_No._14_Moonlight_1st_Movement.mxl"},
-    {"id":2, "name": "K545", "composer":"W.A Mozart","instru":"Piano","path":"src/assets/musicXML/Sonata_No.16_In_C_Major_K545-Wolfgang_Amadeus_Mozart.mxl"},
-  ]
-  
-  constructor(private router:Router){}
+  constructor(
+    private router:Router,
+    public scoreService: ScoreService){}
 
   ngOnInit(): void {
     this.router.events.subscribe(nav => {
@@ -26,7 +25,9 @@ export class ScoreSelectorComponent implements OnInit {
         console.log("Link changed.");
         
       }
-    })
+    });
+
+
   }
 
   onSelect(score:any){
